@@ -1,0 +1,98 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url("../static/funky-background.jpeg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+/* glass effect */
+h1,
+a,
+.card {
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.card-title,
+.title-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    z-index: 1;
+    color: white;
+    padding: 2rem;
+}
+
+p.card-title {
+    top: 40px;
+}
+
+.title-header {
+    position: static;
+}
+
+canvas.webgl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background-color: #0056b3;
+}
