@@ -35,8 +35,9 @@ function createSceneForCanvas(canvas, index) {
   renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+  const clock = new THREE.Clock();
   const tick = () => {
-    object.rotation.y = 0.02;
+    object.rotation.y = 1 * clock.getElapsedTime();
     renderer.render(scene, camera);
     window.requestAnimationFrame(tick);
   };
@@ -80,7 +81,6 @@ function updatePositionBasedOnVisibility() {
   scenes.forEach(({ card, scene, camera, object }, index) => {
     const visibility = getVisibilityPercentage(card);
     object.position.x = -10 + visibility * 10; // X axis from -10 to 10
-
   });
 }
 
@@ -100,5 +100,3 @@ window.addEventListener("scroll", () => {
     window.scrollY > navbar.offsetHeight ? "block" : "none";
   updatePositionBasedOnVisibility();
 });
-
-
